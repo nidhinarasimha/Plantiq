@@ -37,6 +37,7 @@ import app.modules.chat.models
 import app.modules.marketplace.models
 import app.modules.cache.image_cache
 
+# creates the tables on startup.
 def ensure_db_schema():
     Base.metadata.create_all(bind=engine)
     try:
@@ -78,6 +79,7 @@ app.mount("/static/uploads", StaticFiles(directory=settings.UPLOAD_DIR), name="u
 app.include_router(auth_router)
 app.include_router(marketplace_router)
 
+# Health check endpoint providing metadata and route mappings
 @app.get("/api/health")
 def health_check():
     return {
@@ -94,6 +96,7 @@ def health_check():
         }
     }
 
+#Fetches localization and translation strings.
 @app.get("/api/i18n/{lang}")
 def get_i18n(lang: str = "en"):
     return get_translations(lang)
