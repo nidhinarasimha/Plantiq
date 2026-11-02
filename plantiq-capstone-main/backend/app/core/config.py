@@ -1,3 +1,4 @@
+# config.py handles the centralized configuration and environment management for PlantIQ using Pydantic/Python standards and python-dotenv
 import os
 from pathlib import Path
 from dotenv import load_dotenv
