@@ -10,9 +10,8 @@ from app.modules.auth.security import (
     get_current_user,
     get_token_from_header
 )
-
-router = APIRouter(prefix="/api/auth", tags=["Auth"])
-
+# It handles core user management operations: registration, login, profile retrieval, and logout.
+router = APIRouter(prefix="/api/auth", tags=["Auth"]) # : Initializes a FastAPI router prefixing all endpoint paths in this file with /api/auth and grouping them under the "Auth" tag in auto-generated docs.
 @router.post("/register", response_model=TokenResponse)
 def register_user(payload: UserRegister, db: Session = Depends(get_db)):
     """Registers a new user account and returns bearer token."""
