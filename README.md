@@ -48,6 +48,8 @@ Key Features
 - Profile and password management.
 - Server-side scan history with filtering and record management.
 - English/Kannada interface, themes, and dark mode.
+
+
 Technology Stack
   Layer                               Technologies
   Backend/API                         Python, FastAPI
