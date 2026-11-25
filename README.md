@@ -51,6 +51,7 @@ Key Features
 
 
 Technology Stack
+
   Layer                               Technologies
   Backend/API                         Python, FastAPI
 
@@ -69,31 +70,5 @@ Fusion (RRF), BGE reranker
 
   Android                             Capacitor 7
 Speech                              IndicConformer / Svarah Whisper STT
-Architecture Overview
-Web app (React + TypeScript)       Android app (Capacitor)
-              \                         /
-               \                       /
-                 ------ FastAPI --------
-                         |
-       -----------------------------------------
-       |          |           |                |
-   ResNet-50   Hybrid RAG   Weather API     Marketplace
-   inference   retrieval    (Open-Meteo)    + accounts
-                  |
-          CCRI reference documents
-                  |
-         Gemini / Groq / offline
-The web frontend and Android wrapper communicate with the FastAPI
-backend. The backend coordinates image inference, retrieval-based
-advisory generation, weather lookups, user data, and marketplace
-operations.
-Repository Structure
-.
-├── backend/       # FastAPI services, models, database and application logic
-├── frontend/      # React + TypeScript web application
-├── mobile/        # Capacitor Android wrapper
-├── design/        # Design system and mockups
-├── scripts/       # Run, sync, test and build scripts
-├── docs/          # Architecture, modules, user flows and deployment guides
-├── release/       # Android release artifact (if included in the checkout)
-└── og/            # Earlier application version retained for reference
+
+
